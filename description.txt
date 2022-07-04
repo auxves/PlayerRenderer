@@ -1,5 +1,7 @@
 Player Renderer lets you render your player to an NPC Spritesheet.
 
+A video tutorial with examples can be found on the Steam Workshop page or at https://youtu.be/MzhXoQlCsTM.
+
 How To Use:
 
 1. Drip out your character
@@ -13,5 +15,3 @@ It supports:
 - Armors
 - Vanities
 - Accessories
-
-* Note: vanity must be worn in the armor slot for it to show up

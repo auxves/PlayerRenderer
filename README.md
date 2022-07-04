@@ -2,6 +2,8 @@
 
 Player Renderer lets you render your player to an NPC Spritesheet.
 
+Video tutorial with examples: https://youtu.be/MzhXoQlCsTM
+
 ## How To Use
 
 1. Drip out your character
@@ -16,5 +18,3 @@ Player Renderer lets you render your player to an NPC Spritesheet.
 - Armors
 - Vanities
 - Accessories
-
-> Note: vanity must be worn in the armor slot for it to show up
