@@ -1,0 +1,6 @@
+displayName = Player Renderer
+author = glossnyx
+version = 1.0.1
+languageVersion = 10
+side = Client
+includeSource = true
