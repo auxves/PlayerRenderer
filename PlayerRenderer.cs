@@ -64,7 +64,7 @@ public class PlayerRenderer : Mod
 		using var stream = new RenderStream(Main.spriteBatch.GraphicsDevice, 36, 36) { OutputName = $"{name}_Head.png" };
 
 		Main.spriteBatch.Begin(
-			(SpriteSortMode) 1,
+			(SpriteSortMode)1,
 			BlendState.AlphaBlend,
 			Main.Camera.Sampler,
 			DepthStencilState.None,
@@ -84,7 +84,7 @@ public class PositionMover : ModPlayer
 	public override void ModifyDrawInfo(ref PlayerDrawSet drawInfo)
 	{
 		if (!PlayerRenderer.RenderingSpritesheet) return;
-		
+
 		drawInfo.Position = Main.screenPosition + new Vector2(11, 8 + PlayerRenderer.FrameIndex * 54);
 		drawInfo.isSitting = PlayerRenderer.Frames[PlayerRenderer.FrameIndex] is SittingFrame;
 	}
@@ -114,6 +114,8 @@ public class RenderStream : IDisposable
 		using var stream = File.Create(path);
 
 		Target.SaveAsPng(stream, Width, Height);
+		Target.Dispose();
+
 		GC.SuppressFinalize(this);
 	}
 }
