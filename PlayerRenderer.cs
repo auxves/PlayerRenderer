@@ -10,16 +10,18 @@ namespace PlayerRenderer;
 
 public class PlayerRenderer : Mod
 {
-	const int WIDTH = 44;
-	const int HEIGHT = 54;
-	const int FRAME_COUNT = 21;
+	public const int WIDTH = 44;
+	public const int HEIGHT = 54;
+	public const int FRAME_COUNT = 21;
+
+	public const int HEAD_SIZE = 36;
 
 	public static bool RenderingSpritesheet { get; private set; } = false;
 	public static int FrameIndex { get; private set; } = 0;
 
 	public static string SavePath { get; } = Path.Combine(Main.SavePath, "Sprites");
 
-	public static Frame[] Frames { get; } =
+	public static readonly Frame[] Frames =
 	{
 		PoseFrame.Default,
 		new PoseFrame { HeadFrame = 5, BodyFrame = 6, LegFrame = 5 },
@@ -61,7 +63,7 @@ public class PlayerRenderer : Mod
 
 	public static void RenderHead(Player player, string name)
 	{
-		using var stream = new RenderStream(Main.spriteBatch.GraphicsDevice, 36, 36) { OutputName = $"{name}_Head.png" };
+		using var stream = new RenderStream(Main.spriteBatch.GraphicsDevice, HEAD_SIZE, HEAD_SIZE) { OutputName = $"{name}_Head.png" };
 
 		Main.spriteBatch.Begin(
 			(SpriteSortMode)1,
@@ -85,7 +87,7 @@ public class PositionMover : ModPlayer
 	{
 		if (!PlayerRenderer.RenderingSpritesheet) return;
 
-		drawInfo.Position = Main.screenPosition + new Vector2(11, 8 + PlayerRenderer.FrameIndex * 54);
+		drawInfo.Position = Main.screenPosition + new Vector2(PlayerRenderer.WIDTH / 4, 8 + PlayerRenderer.FrameIndex * PlayerRenderer.HEIGHT);
 		drawInfo.isSitting = PlayerRenderer.Frames[PlayerRenderer.FrameIndex] is SittingFrame;
 	}
 }
@@ -112,7 +114,7 @@ public class RenderStream : IDisposable
 
 		var path = Path.Combine(PlayerRenderer.SavePath, OutputName);
 		using var stream = File.Create(path);
-
+		
 		Target.SaveAsPng(stream, Width, Height);
 		Target.Dispose();
 
