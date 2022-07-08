@@ -8,8 +8,6 @@ using System;
 
 namespace PlayerRenderer;
 
-using static Frame;
-
 public class PlayerRenderer : Mod
 {
 	public const int WIDTH = 44;
