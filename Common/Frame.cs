@@ -41,3 +41,17 @@ public sealed record Blinking : Frame
         }
     }
 }
+
+public sealed record Attack(float Rotation) : Frame
+{
+    public override void Setup(Player player)
+    {
+        Pose.Default.Setup(player);
+        player.SetCompositeArmBack(true, Player.CompositeArmStretchAmount.Full, Rotation);
+    }
+
+    public override void Cleanup(Player player)
+    {
+        player.compositeBackArm.enabled = false;
+    }
+}

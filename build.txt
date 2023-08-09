@@ -1,6 +1,5 @@
 displayName = Player Renderer
 author = auxves
-version = 1.0.3
-languageVersion = 10
+version = 2.0.0
 side = Client
 includeSource = true

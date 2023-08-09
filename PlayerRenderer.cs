@@ -19,7 +19,7 @@ public class PlayerRenderer : Mod
 
 	public static readonly string SavePath = Path.Combine(Main.SavePath, "Sprites");
 
-	public static readonly Frame[] Frames =
+    public static readonly Frame[] Frames =
 	{
 		Pose.Default,
 		new Pose(5, 6, 5),
@@ -42,6 +42,10 @@ public class PlayerRenderer : Mod
 		new Sitting(),
 		Pose.Default,
 		new Blinking(),
+		new Attack(2.0f),
+		new Attack(1.5f),
+		new Attack(1.0f),
+		new Attack(0.5f),
 	};
 
 	public static void Render(Player player, string path)
