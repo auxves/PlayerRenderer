@@ -1,0 +1,31 @@
+Player Renderer lets you render your player to a Town NPC Spritesheet.
+
+A video tutorial with examples can be found on the Steam Workshop page or below.
+
+https://www.youtube.com/watch?v=MzhXoQlCsTM
+
+[h1]Generating The Sprite[/h1]
+
+1. Drip out your character
+2. Zoom out to 100% (if the slider doesn't go down to 100%, disable Forced Zoom in the tModLoader Settings)
+3. Ensure proper lighting (this will affect the resulting sprites) - Daylight recommended
+4. Face to the left (not required, but NPC sprites are expected to face left)
+5. Type "/render <name>" in the chat, substituting <name> with your desired name
+
+The sprites will be saved in the `Sprites` directory, next to `Players` and `Worlds`.
+
+[h1]Usage In Mod[/h1]
+
+See the [url=https://github.com/auxves/PlayerRenderer]GitHub repository[/url] for instructions on how to use the sprites in your mod.
+
+[h1]Supports[/h1]
+
+- Base Character
+- Armors
+- Vanities
+- Accessories
+
+[h1]Changelog[/h1]
+
+v2.0.0
+- Added basic attack animation
